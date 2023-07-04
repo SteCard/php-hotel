@@ -54,9 +54,9 @@
     <main>
         <div class="container">
             <div class="row">
-                <div class="col-12">
+                <div class="col-12 my-5">
                     <!--  Table -->
-                    <table class="table">
+                    <table class="table table-bordered table-hover table-striped border-danger-subtle">
                         <thead>
                             <tr>
                                 <th>Nome</th>
@@ -66,7 +66,7 @@
                                 <th>Distanza dal centro</th>
                             </tr>
                         </thead>
-                        <tbody>
+                        <tbody class="table-group-divider">
                             <?php foreach($hotels as $hotel) {?>
                                 <tr>
                                     <td>
@@ -76,13 +76,13 @@
                                         <?php echo $hotel['description'] ?>
                                     </td>
                                     <td>
-                                        <?php echo $hotel['parking'] ?>
+                                        <?php echo ($hotel['parking']) ? 'Disponibile' : 'Non disponibile' ?>
                                     </td>
                                     <td>
                                         <?php echo $hotel['vote'] ?>
                                     </td>
                                     <td>
-                                        <?php echo $hotel['distance_to_center'] ?>
+                                        <?php echo ($hotel['distance_to_center']). " km" ?>
                                     </td>
                                 </tr>
                             <?php } ?>
